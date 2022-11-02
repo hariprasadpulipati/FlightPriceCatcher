@@ -5,8 +5,8 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 
-
-<!-- Username:<input type="text" [(ngModel)]="loginId"><br/>
+<body>
+    <!-- Username:<input type="text" [(ngModel)]="loginId"><br/>
 Password:<input type="password" [(ngModel)]="password"><br/>
 <button (click) ="loginSubmit()">Login</button> -->
 <!--Card-Title-->
@@ -16,19 +16,25 @@ Password:<input type="password" [(ngModel)]="password"><br/>
 
    <!-- <i  class="fa fa-plane fa-2x" aria-hidden="true"></i> -->
 
-<div class="card shadow mb-5 bg-white rounded">
-<form #loginForm = "ngForm" class="form-group"(ngSubmit)="loginFormSubmit(loginForm.value)" novalidate>
-    Username <input type="text" ngModel name = "loginId" class="form-control"required #loginId="ngModel" minlength="8" maxlength="25" style="width: 70%;"><br>
-    Password <input type="password" ngModel name = "password" class="form-control" required #password="ngModel" minlength="8" maxlength="15" style="width: 70%;"><br>
-<button class="btn btn-primary" [disabled]="!loginForm.valid" style="width: 70%;" routerLink="homepage" >Login</button>
-<br>
-<br>
-<button class="btn btn-outline-success" style="width: 70%;" type="submit" routerLink="register" >Register Here</button>
+   
+    <div class="card shadow mb-5 bg-white rounded">
+        <form #loginForm = "ngForm" class="form-group"(ngSubmit)="loginFormSubmit(loginForm.value)" novalidate>
+            Username <input type="text" ngModel name = "loginId" class="form-control"required #loginId="ngModel" minlength="8" maxlength="25" style="width: 70%;"><br>
+            Password <input type="password" ngModel name = "password" class="form-control" required #password="ngModel" minlength="8" maxlength="15" style="width: 70%;"><br>
+        <button class="btn btn-primary" [disabled]="!loginForm.valid" style="width: 70%;" routerLink="homepage" >Login</button>
+        <br>
+        <br>
+        <button class="btn btn-success" style="width: 70%;" type="register" routerLink="register" >Sign in with Google</button>
+        
+        
+        </form>
+        <div  *ngIf="loginId.errors?.['required']&& loginId.touched"style="color:red;"> Login id is mandatory..</div>
+        <div *ngIf="password.errors?.['required']&& password.touched"style="color:red;"> password is mandatory..</div>
+        <div *ngIf="loginId.errors?.['minlength']&& loginId.touched"style="color:red;"> Login id is mandatory..</div>
+        <div *ngIf="password.errors?.['minlength']&& password.touched" > password is mandatory..</div>
+        </div>
+    
+</body>
 
+ 
 
-</form>
-<div  *ngIf="loginId.errors?.['required']&& loginId.touched"style="color:red;"> Login id is mandatory..</div>
-<div *ngIf="password.errors?.['required']&& password.touched"style="color:red;"> password is mandatory..</div>
-<div *ngIf="loginId.errors?.['minlength']&& loginId.touched"style="color:red;"> Login id is mandatory..</div>
-<div *ngIf="password.errors?.['minlength']&& password.touched" > password is mandatory..</div>
-</div>

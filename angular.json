@@ -23,6 +23,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/scss/bootstrap.scss",
              "E:/Angular/FlightPriceCatcher/src/app/home-page/home-page.component.css",
               "src/styles.css"
             ],

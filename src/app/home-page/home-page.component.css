@@ -9,6 +9,7 @@
   
 }
 
+
 .card-title{
   margin:auto;
   padding:15px;
@@ -69,17 +70,7 @@ select:focus{
   text-align: center;
 }
 
-.fa-plane{
-  color:#1cad9f;
-}
 
-.fa-taxi{
-  color: #c2f700;
-}
-
-.fa-train{
-  color:red;
-}
 
 @media only screen and (max-width: 600px) {
   .card{

@@ -10,8 +10,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
     <title>Document</title>
+	
 </head>
-<body style="background-color :white;">
+
+<body style="background-image:url('https://images.pexels.com/photos/956999/milky-way-starry-sky-night-sky-star-956999.jpeg?cs=srgb&dl=pexels-felix-mittermeier-956999.jpg&fm=jpg&_gl=1*1eb4jg4*_ga*MTkwOTk1Nzc5Ni4xNjY3Mzc0Nzcz*_ga_8JE65Q40S6*MTY2NzM3NDc3NC4xLjEuMTY2NzM3NTc2NC4wLjAuMA..');background-size: cover;">
+	
     <!--Card-->
 <div class="card shadow mb-5 bg-white rounded">
 
@@ -20,14 +23,7 @@
 
 		<!--Card-Title-->
 		<p class="card-title text-center shadow mb-5 rounded">Travel Booking Form</p>
- 
- <div class="icons text-center">
 
-	<i  class="fa fa-plane fa-2x" aria-hidden="true"></i>
-
-
-
- </div>
 
     <hr>
 
@@ -51,22 +47,35 @@
 		<option value={{country.cca3}}
     
             *ngFor="let country of countries">{{country.name.common}}</option>
-        <!-- <option value="1">New Delhi</option>
+        <option value="1">New Delhi</option>
         <option value="2">Mumbai</option>
-        <option value="3">Bangalore</option> -->
+        <option value="3">Bangalore</option>
+		<option value="4">Hyderabad</option>
+		<option value="5">Chennai</option>
+		<option value="6">Kolkata</option>
     </select>
 			</div>
 
 			<div class="col-sm-6">
-				<select class="browser-default custom-select mb-4" id="select">
-        <option name="country" >To City/Airport</option>
-		<option value={{country.cca3}}
+				<select class="browser-default custom-select mb-4"  id="select">
+         <option name="country" >To City/Airport</option>
+		<!-- <option value={{country.cca3}}
     
-            *ngFor="let country of countries">{{country.name.common}}</option>
-       <!-- <option value="1">New Delhi</option>
+            *ngFor="let country of countries">{{country.name.common}}</option> --> -->
+       <option value="1">New Delhi</option>
         <option value="2">Mumbai</option>
-        <option value="3">Bangalore</option> -->
-    </select>
+        <option value="3">Bangalore</option>
+		<option value="4">Hyderabad</option>
+		<option value="5">Chennai</option>
+		<option value="6">Kolkata</option>
+
+		<!-- Country:<select name="country" ngModel>
+                
+			<option value={{country.cca3}}
+	
+			*ngFor="let country of countries">{{country.name.common}}</option> -->
+		</select>
+    <!-- </select> -->
 			</div>
 
 		</div>
@@ -76,11 +85,13 @@
 		<div class="row">
 
 			<div class="col-sm-6">
-				<input placeholder="&#xf073; Departing" type="text" id="date-picker-example" class="form-control datepicker mb-4" style="font-family:Arial, FontAwesome" >
+				<!-- <input placeholder="&#xf073; Departing;" type="text" onfocus="(this.type='date')" id="date-picker-example" class="form-control datepicker mb-4" style="font-family:Arial, FontAwesome" > -->
+				<input type="text" placeholder="&#xf073; Departing:" onfocus="(this.type='date')"id="date-picker-example" class="form-control datepicker mb-4" style="font-family:Arial, FontAwesome">
 			</div>
 
 				<div class="col-sm-6">
-					<input placeholder="&#xf073; Arriving" type="text" id="date-picker-example" class="form-control datepicker" style="font-family:Arial, FontAwesome" >
+					<input type="text" placeholder="&#xf073; Arriving:" onfocus="(this.type='date')"id="date-picker-example" class="form-control datepicker mb-4" style="font-family:Arial, FontAwesome">
+					<!-- <input placeholder="&#xf073; Arriving" type="text" id="date-picker-example" class="form-control datepicker" style="font-family:Arial, FontAwesome" > -->
 			</div>
 
 				</div>
@@ -90,21 +101,23 @@
 				<div class="row mt-4">
 
 					<div class="col-sm-6">
-						<select class="browser-default custom-select mb-4" id="select">
-        <option value="" disabled="" selected="">Anytime</option>
-        <option value="1">6:00 AM</option>
-        <option value="2">3:00 PM</option>
-        <option value="3">6:00 PM</option>
-    </select>
+						<input type="text" placeholder="🕐Anytime" onfocus="(this.type='time')"id="date-picker-example" class="form-control datepicker mb-4" style="font-family:Arial, FontAwesome">
+						<!-- <select class="browser-default custom-select mb-4" id="select">
+						<option value="time" disabled="" selected="">Anytime</option>
+						<option value="1">6:00 AM</option>
+						<option value="2">3:00 PM</option>
+						<option value="3">6:00 PM</option> -->
+    <!-- </select> -->
 					</div>
 
 					<div class="col-sm-6">
-						<select class="browser-default custom-select mb-4" id="select">
+						<input type="text" placeholder="🕐Anytime" onfocus="(this.type='time')"id="time-picker-example" class="form-control timepicker mb-4" style="font-family:Arial, FontAwesome">
+						<!-- <select class="browser-default custom-select mb-4" id="select">
         <option value="" disabled="" selected="">Anytime</option>
           <option value="1">6:00 AM</option>
         <option value="2">3:00 PM</option>
-        <option value="3">6:00 PM</option>
-    </select>
+        <option value="3">6:00 PM</option> -->
+    <!-- </select> -->
 					</div>
 
 				</div>
@@ -150,6 +163,8 @@
 			</div>
 		</div>
 
-    
+    <br>
+	<br>
+	<br>
 </body>
 </html>
