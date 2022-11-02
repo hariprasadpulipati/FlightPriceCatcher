@@ -1,0 +1,42 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="E:\Angular\FlightPriceCatcher\src\app\app.component.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</head>
+
+
+<h3><p class="card-title text-center shadow mb-5 rounded">Registration Page</p></h3>s
+<div class="card shadow mb-5 bg-white rounded">
+    
+        
+     
+            <form #RegistrationForm = "ngForm" (ngSubmit)="RegistrationFormSubmit(RegistrationForm.value)" novalidate>
+        
+                First Name:<input type="text" ngModel name = "firstname"  class="form-control" required #firstname="ngModel"><br/>
+                Last Name:<input type="text" ngModel name = "lastname"  class="form-control" required #lastname="ngModel"><br/>
+                 <!-- Gender:<input type="text" ngModel name = "gender"  class="form-control" required #gender="ngModel"><br/> -->
+                 Gender:<label class="radiobtn"><input type="radio" name="gender" value="Male">male</label><label class="radiobtn"><input type="radio" name="gender" value="Male">Female</label><label class="radiobtn"><input type="radio" name="gender" value="Male">Other</label><br>
+                 Email Id:<input type="text" ngModel name = "emailid"  class="form-control" required #emailid="ngModel"><br/>
+                 Contact Number:<input type="text" ngModel name = "contactnumber"  class="form-control" required #contactnumber="ngModel"><br/>
+                 Country:<select name="country" ngModel>
+                
+                    <option value={{country.cca3}}
+            
+                    *ngFor="let country of countries">{{country.name.common}}</option>
+                    
+                
+                
+      
+    
+    <div style="color: red;" *ngIf="firstname.errors?.['required'] && firstname.touched">FirstName is mandatory..</div>
+    <div style="color: red;" *ngIf="lastname.errors?.['required'] && lastname.touched">LastName is mandatory..</div>
+    <!-- <div style="color: red;" *ngIf="gender.errors?.['required'] && gender.touched">Gender is mandatory..</div> -->
+    <div style="color: red;" *ngIf="emailid.errors?.['required'] && emailid.touched">EmailId is mandatory..</div>
+    <div style="color: red;" *ngIf="contactnumber.errors?.['required'] && contactnumber.touched">ContactNumber is mandatory..</div>
+    <button class="btn btn-outline-success" style="width: 70%;" type="submit" >Register</button>
+  
