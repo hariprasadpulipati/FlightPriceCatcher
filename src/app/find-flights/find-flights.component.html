@@ -1,0 +1,92 @@
+<div class="container-fluid" ><br>
+    
+    <div class="card borderless-primary mb-3" style="max-width: 30rem;">
+        <div class="card-header bg-white">
+            <img src="assets/makemytrip3.jfif" >
+        
+        <div class="card-body text-primary">
+          <h5 class="card-title"></h5>
+          <table class="table table-borderless table-striped " height="10px" width="10px">
+          <thead>
+            <tr >
+            
+                <th>DEPARTURE</th>
+                <th>ARRIVAL</th>
+                <th>DURATION</th>
+                <th>PRICE</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr *ngFor="let flight of flights">
+                <td>{{flight.departure}}</td>
+                <td>{{flight.arrival}}</td>
+                <td>{{flight.duration}}</td>
+              <!---  <div >
+                    <input type="radio" name="" value="price">
+                   <!---- <button type="radio"name="price" value="price"></button>
+                   <label class="btn btn-outline-primary" for="btncheck1">Checkbox 1</label>
+                  </div>-->
+               
+                <td>{{flight.price |currency:'INR'}}</td>
+                <div >
+                    <input   style="border-color: red"  type="radio" name="" value="price">
+                   <!---- <button type="radio"name="price" value="price"></button>
+                   <label class="btn btn-outline-primary" for="btncheck1">Checkbox 1</label>-->
+                  </div>
+               
+            </tr>
+        </tbody>
+    
+    </table>
+          <p class="card-text"></p>
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-primary">bookflight</button>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="container-fluid" ><br>
+        <div class="card borderless-primary mb-3" style="max-width: 30rem;">
+            <div class="card-header bg-white">
+                <img src="assets/paytm2.jfif" >
+            
+            <div class="card-body text-primary">
+              <h5 class="card-title"></h5>
+              <table class="table table-borderless table-striped " height="10px" width="10px">
+              <thead>
+                <tr >
+                
+                    <th>DEPARTURE</th>
+                    <th>ARRIVAL</th>
+                    <th>DURATION</th>
+                    <th>PRICE</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let flight of flights">
+                    <td>{{flight.departure}}</td>
+                    <td>{{flight.arrival}}</td>
+                    <td>{{flight.duration}}</td>
+                    <td>{{flight.price |currency:'INR'}}</td>
+                    <div >
+                        <input   style="border-color: red"  type="radio" name="" value="price">
+                       <!---- <button type="radio"name="price" value="price"></button>
+                       <label class="btn btn-outline-primary" for="btncheck1">Checkbox 1</label>-->
+                      </div>
+                      
+                   
+                </tr>
+            </tbody>
+        
+        </table>
+              <p class="card-text"></p>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-primary">bookflight</button>
+            </div>
+        
+          </div>
+        </div>
+        </div>
