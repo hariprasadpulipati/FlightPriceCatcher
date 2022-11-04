@@ -1,11 +1,13 @@
 .card{
     margin:auto;
-    border:solid 1px #dbdad7; 
-    width:30%; 
-    padding-left:110px!important;
+ 
+    border: 50px #dbdad7; 
+    width:25%; 
+    padding-left:85px!important;
     padding-bottom:10px!important;
     padding-right:10px!important;
     padding-top: 0px!important;
+    
    
   }
   
@@ -23,6 +25,7 @@
   }
   .custom-select{
     width:100%;
+    background: transparent;
   }
   
   .btn2{
@@ -37,6 +40,7 @@
     border-color: #d1d1cf!important;
    -webkit-box-shadow: none!important;
     box-shadow: none!important;
+    
   }
   
   select{
@@ -80,6 +84,7 @@
       padding-bottom:10px!important;
       padding-right:10px!important;
       padding-top: 0px!important;
+      
     
     }
   

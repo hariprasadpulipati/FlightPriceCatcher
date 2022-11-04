@@ -1,7 +1,16 @@
-
-  
+.card-button{
+    margin:auto;
  
-  
+    border: 50px #dbdad7; 
+    width:25%; 
+    padding-left:10px!important;
+    padding-bottom:10px!important;
+    padding-right:10px!important;
+    padding-top: 0px!important;
+    
+   
+  }
+
   
   
   

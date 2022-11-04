@@ -13,5 +13,9 @@ export class HomePageComponent implements OnInit {
   ngOnInit(): void {
     this.service.getAllCountries().subscribe((data:any)=> {this.countries=data,console.log(data)}); 
   }
+  FindFlightFormSubmit(FindFlightForm:any){
+    console.log(FindFlightForm)
+  }
+
 
 }

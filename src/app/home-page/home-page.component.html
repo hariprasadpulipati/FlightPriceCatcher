@@ -13,7 +13,10 @@
 	
 </head>
 
-<body style="background-image:url('https://images.pexels.com/photos/956999/milky-way-starry-sky-night-sky-star-956999.jpeg?cs=srgb&dl=pexels-felix-mittermeier-956999.jpg&fm=jpg&_gl=1*1eb4jg4*_ga*MTkwOTk1Nzc5Ni4xNjY3Mzc0Nzcz*_ga_8JE65Q40S6*MTY2NzM3NDc3NC4xLjEuMTY2NzM3NTc2NC4wLjAuMA..');background-size: cover;">
+<body class="container-fluid" style="background-image: url(https://images.pexels.com/photos/1465904/pexels-photo-1465904.jpeg?cs=srgb&dl=pexels-nur-andi-ravsanjani-gusma-1465904.jpg&fm=jpg&_gl=1*o7f84h*_ga*MTkwOTk1Nzc5Ni4xNjY3Mzc0Nzcz*_ga_8JE65Q40S6*MTY2NzQ2NjEwOC4zLjAuMTY2NzQ2NjEwOC4wLjAuMA..);background-size: cover;">
+<br>
+<br>
+
 	
     <!--Card-->
 <div class="card shadow mb-5 bg-white rounded">
@@ -27,12 +30,14 @@
 
     <hr>
 
+	<form #FindFlightForm = "ngForm" (ngSubmit)="FindFlightFormSubmit(FindFlightForm.value)" novalidate>
+
 		<p class="searchText"><strong>Search For Cheap Flights</strong></p>
 
 		<!--First Row-->
 		<div class="row mb-3 mt-3">
 
-			<label class="radiobtn"><input type="radio" name="gender" value="male">One Way</label>
+			<label class="radiobtn"><input type="radio" name="gender" value="male" >One Way</label>
 			
 
 		</div>
@@ -159,7 +164,10 @@
 
 				</div>
 
-				<a href="#" class="btn btn-primary float-right mt-5" style="background-color: #1e81b0;">Find Flights</a>
+				<!-- <button class="btn btn-outline-success" style="color: white;" type="submit" routerLink="bookingpage" >Register</button> -->
+
+				<a href="#" class="btn btn-primary float-right mt-5" style="background-color: #1e81b0;"  routerLink="findFlights">Find Flights</a>
+			</form>
 			</div>
 		</div>
 

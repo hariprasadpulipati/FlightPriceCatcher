@@ -10,52 +10,56 @@
 </head>
 
 
-<h3><p class="card-title text-center shadow mb-5 rounded">Registration Page</p></h3>
-<body>
-    
+<!-- <h3><p class="card-title text-center shadow mb-5 rounded">Registration Page</p></h3> -->
+<body class="container-fluid" style="background-image: url(https://images.pexels.com/photos/1465904/pexels-photo-1465904.jpeg?cs=srgb&dl=pexels-nur-andi-ravsanjani-gusma-1465904.jpg&fm=jpg&_gl=1*o7f84h*_ga*MTkwOTk1Nzc5Ni4xNjY3Mzc0Nzcz*_ga_8JE65Q40S6*MTY2NzQ2NjEwOC4zLjAuMTY2NzQ2NjEwOC4wLjAuMA..);background-size: cover;">
+    <br>
+    <br>
 
-<div class="card shadow mb-5 bg-white rounded" >
-    
+  <div class="card shadow mb-5 bg-transparent-opacity-25 rounded">
+
+        <br>
+  
+      
+    <form #RegistrationForm = "ngForm" (ngSubmit)="RegistrationFormSubmit(RegistrationForm.value)" novalidate>
+
+        <input type="text" ngModel name = "firstname"  class="form-control" required #firstname="ngModel" placeholder="FirstName"><br/>
+        <input type="text" ngModel name = "lastname"  class="form-control" required #lastname="ngModel" placeholder="LastName"><br/>
+         <input type="text" ngModel name = "gender"  class="form-control" required #gender="ngModel"  placeholder="Gender"><br/>
+         <input type="text" ngModel name = "Dob"  class="form-control" onfocus="(this.type='date')" required #dob="ngModel" placeholder="Dob"><br/>
+         <input type="text" ngModel name = "emailid"  class="form-control" required #emailid="ngModel" placeholder="Email Id"><br/>
+         <input type="text" ngModel name = "contactnumber"  class="form-control" required #contactnumber="ngModel" placeholder="ContactNumber"><br/>
+         <input type="text" ngModel name = "address"  class="form-control" required #address="ngModel" placeholder="Address"><br/>
+         <input type="text" ngModel name = "pincode"  class="form-control" required #pincode="ngModel" placeholder="Pincode"><br/>
+         country:<select aria-placeholder="Country" name="country" ngModel >
         
-    <!-- <form #RegistrationForm = "ngForm" (ngSubmit)="RegistrationFormSubmit(RegistrationForm.value)" novalidate>
+            <option value={{country.cca3}}
     
-        Enter firstname:<input type="text" ngModel name = "firstname" required #firstname="ngModel"><br><br/>
-        Enter lastname:<input type="text" ngModel name = "lastname" required #lastname="ngModel"><br><br/>
-        Enter gender:<input type="text" ngModel name = "gender" required #gender="ngModel"><br><br/>
-        Enter emailid:<input type="text" ngModel name = "emailid" required #emailid="ngModel"><br><br/>
-        Enter contactnumber:<input type="text" ngModel name = "contactnumber" required #contactnumber="ngModel"><br><br/>
-          select country:
-          <select name="country" ngModel>
-            <option value="{{country.cca3}}"
             *ngFor="let country of countries">{{country.name.common}}</option>
-          </select><br/>
+        </select><br/>
+        <br>
+      
+         </form>
+         <button class="btn btn-success" style="width: 40%;" type="submit" >Register</button>
+         
         
-    </form>
-      -->
-            <form #RegistrationForm = "ngForm" (ngSubmit)="RegistrationFormSubmit(RegistrationForm.value)" novalidate>
         
-                First Name:<input type="text" ngModel name = "firstname"  class="form-control" required #firstname="ngModel"><br/>
-                Last Name:<input type="text" ngModel name = "lastname"  class="form-control" required #lastname="ngModel"><br/>
-                 Gender:<input type="text" ngModel name = "gender"  class="form-control" required #gender="ngModel" ><br/>
-                 Email Id:<input type="text" ngModel name = "emailid"  class="form-control" required #emailid="ngModel"><br/>
-                 Contact Number:<input type="text" ngModel name = "contactnumber"  class="form-control" required #contactnumber="ngModel"><br/>
-                 Country:<select name="country" ngModel>
-                
-                    <option value={{country.cca3}}
-            
-                    *ngFor="let country of countries">{{country.name.common}}</option>
-                </select><br/>
-                <br>
-              <button class="btn btn-success" style="width: 40%;" type="submit" >Register</button>
-                 </form>
-                    
-                
-                
-                
-    
-    <div style="color: red;" *ngIf="firstname.errors?.['required'] && firstname.touched">FirstName is mandatory..</div>
-    <div style="color: red;" *ngIf="lastname.errors?.['required'] && lastname.touched">LastName is mandatory..</div>
-    <!-- <div style="color: red;" *ngIf="gender.errors?.['required'] && gender.touched">Gender is mandatory..</div> -->
-    <div style="color: red;" *ngIf="emailid.errors?.['required'] && emailid.touched">EmailId is mandatory..</div>
-    <div style="color: red;" *ngIf="contactnumber.errors?.['required'] && contactnumber.touched">ContactNumber is mandatory..</div> <br>
-    
+
+<div style="color: red;" *ngIf="firstname.errors?.['required'] && firstname.touched">FirstName is mandatory..</div>
+<div style="color: red;" *ngIf="lastname.errors?.['required'] && lastname.touched">LastName is mandatory..</div>
+<!-- <div style="color: red;" *ngIf="gender.errors?.['required'] && gender.touched">Gender is mandatory..</div> -->
+<div style="color: red;" *ngIf="emailid.errors?.['required'] && emailid.touched">EmailId is mandatory..</div>
+<div style="color: red;" *ngIf="contactnumber.errors?.['required'] && contactnumber.touched">ContactNumber is mandatory..</div> 
+
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+  
+</body>
+
+  
+

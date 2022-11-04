@@ -13,6 +13,8 @@ export class RegisterPageComponent implements OnInit {
   Dob:Date;
   Email:String;
   Contact:number;
+  address:string;
+  pincode:String;
   Username:String;
   Password:String;
 
@@ -26,6 +28,8 @@ export class RegisterPageComponent implements OnInit {
     this.Dob = new Date()
     this.Email = "";
     this.Contact = 0;
+    this.address="";
+    this.pincode="";
     this.Username = "";
     this.Password = "";
    }
@@ -43,6 +47,9 @@ export class RegisterPageComponent implements OnInit {
     console.log('Contact:',this.Contact)
     console.log('Username:',this.Username)
     console.log('Password:',this.Password)
+    console.log('Address:',this.address)
+    console.log('Pincode:',this.pincode)
+
   }
 
   

@@ -1,0 +1,43 @@
+<div class="container-fluid" style="background-image: url(https://images.pexels.com/photos/1465904/pexels-photo-1465904.jpeg?cs=srgb&dl=pexels-nur-andi-ravsanjani-gusma-1465904.jpg&fm=jpg&_gl=1*o7f84h*_ga*MTkwOTk1Nzc5Ni4xNjY3Mzc0Nzcz*_ga_8JE65Q40S6*MTY2NzQ2NjEwOC4zLjAuMTY2NzQ2NjEwOC4wLjAuMA..);background-size: cover;" ><br>
+    
+    <h3 style="text-align:center;">Flight Details</h3><br><br/>
+    <table class="table table-borderless table-striped table-hover table-sm" height="300px" width="300px">
+        
+        
+      
+    <!--<table class="table table-bordered table-striped table-hover table-sm">-->
+        <thead style="text-decoration-color: white;">
+        <tr >
+            <th>FLIGHTNAME</th>
+            <th>FLIGHTNUMBER</th>
+            <th>DEPARTURE</th>
+            <th>ARRIVAL</th>
+            <th>DURATION</th>
+            <th>PRICE</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let flight of flights">
+            <td>{{flight.flightname}}</td>
+            <td>{{flight.flightnumber}}</td>
+            <td>{{flight.departure}}</td>
+            <td>{{flight.arrival}}</td>
+            <td>{{flight.duration}}</td>
+            <td>{{flight.price |currency:'INR'}}</td>
+            <br>
+        </tr>
+    </tbody>
+    </table>
+    <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+    </div>
