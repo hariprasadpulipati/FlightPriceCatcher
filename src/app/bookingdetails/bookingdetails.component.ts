@@ -17,7 +17,7 @@ export class BookingdetailsComponent implements OnInit {
     
 
        ngOnInit(): void {
-        this.service.BookingDetails().subscribe((data:any)=>{
+        this.service.getAllBookingDetails().subscribe((data:any)=>{
           this.flights=data;
           console.log(this.flights);
         })

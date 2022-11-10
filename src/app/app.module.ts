@@ -4,10 +4,7 @@ import { SocialAuthServiceConfig, SocialLoginModule, } from 'angularx-social-log
 // import {
 //   GoogleLoginProvider,
 // } from 'angularx-social-login';
-import { GoogleLoginProvider, FacebookLoginProvider  } from 'angularx-social-login';
-
-
-
+import { GoogleLoginProvider,} from 'angularx-social-login';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -22,7 +19,6 @@ import { BookingdetailsComponent } from './bookingdetails/bookingdetails.compone
 
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,8 +28,6 @@ import { BookingdetailsComponent } from './bookingdetails/bookingdetails.compone
     NavbarComponent,
     FindFlightsComponent,
     BookingdetailsComponent,
-
-   
   ],
   imports: [
     
@@ -43,6 +37,9 @@ import { BookingdetailsComponent } from './bookingdetails/bookingdetails.compone
     RouterModule,
     HttpClientModule,
     SocialLoginModule,
+    
+    
+
   
   ],
   providers:  [
@@ -54,16 +51,11 @@ import { BookingdetailsComponent } from './bookingdetails/bookingdetails.compone
           {
             id: GoogleLoginProvider.PROVIDER_ID,
             provider: new GoogleLoginProvider(
-              'https://accounts.google.com/o/oauth2/auth/oauthchooseaccount?redirect_uri=storagerelay%3A%2F%2Fhttps%2Fangularx-social-login.stackblitz.io%3Fid%3Dauth68936&response_type=permission%20id_token&scope=email%20profile%20openid&openid.realm&include_granted_scopes=true&client_id=528961187921-ld24b25466u4t2lacn9r35asg000lfis.apps.googleusercontent.com&ss_domain=https%3A%2F%2Fangularx-social-login.stackblitz.io&fetch_basic_profile=true&gsiwebsdk=2&service=lso&flowName=GeneralOAuthFlow'
-              
-          
+              '190141339294-62aide3cf61v32kpfhbvbk321jbeancf.apps.googleusercontent.com'
             )
           },
           
         ],
-        onError: (err) => {
-          console.error(err);
-        }
       } as SocialAuthServiceConfig,
     },
    

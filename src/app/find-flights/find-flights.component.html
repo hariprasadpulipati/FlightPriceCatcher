@@ -12,8 +12,192 @@
     <title>Document</title>
 	
 </head>
-<body>
 
+
+<body  class="container-fluid" style="background-image: url(https://images.pexels.com/photos/1465904/pexels-photo-1465904.jpeg?cs=srgb&dl=pexels-nur-andi-ravsanjani-gusma-1465904.jpg&fm=jpg&_gl=1*o7f84h*_ga*MTkwOTk1Nzc5Ni4xNjY3Mzc0Nzcz*_ga_8JE65Q40S6*MTY2NzQ2NjEwOC4zLjAuMTY2NzQ2NjEwOC4wLjAuMA..);background-size: cover;">
+    <br>
+    <br>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card shadow mb-5 bg-white rounded" style="width: 50;">
+                <table class="table table-borderless table-striped  ">
+                    <thead >
+                      <tr>
+                        <!-- <th> <form>New Delhi &rarr; Bengaluru Wed, 9 Nov</form></th> -->
+                      
+
+                        <th>New Delhi</th> 
+                        <th >--</th> 
+                        <th>Bengaluru</th>
+                        <th>Wed</th>
+                        <th>9 Nov</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <!-- <td>Departure---- Duration Arrival Price</td> -->
+                    <td>Departure</td>
+                    <td>--</td>
+                    <td>Duration</td>
+                    <td>Arrival</td>
+                    <td>Price</td>
+                    </tr>
+                    </tbody>
+                  </table>
+
+            </div>
+
+        </div>
+        <div class="col-sm-6">
+            <div class="card shadow mb-5 bg-white rounded" style="width: 50;">
+                <table class="table table-borderless table-striped  ">
+                    <thead >
+                      <tr>
+                        <!-- <th> <form>New Delhi &rarr; Bengaluru Wed, 9 Nov</form></th> -->
+                      
+
+                        <th>New Delhi</th> 
+                        <th >--</th> 
+                        <th>Bengaluru</th>
+                        <th>Wed</th>
+                        <th>9 Nov</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <!-- <td>Departure---- Duration Arrival Price</td> -->
+                    <td>Departure</td>
+                    <td>--</td>
+                    <td>Duration</td>
+                    <td>Arrival</td>
+                    <td>Price</td>
+                    </tr>
+                    </tbody>
+                  </table>
+
+            </div>
+
+        </div>
+        
+    </div>
+
+    <!-- card  -->
+    
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="container-fluid" ><br>
+            
+                <div class="card shadow mb-5 bg-white rounded" style="max-width: 40rem;">
+                    <div class="card-header bg-white">
+                        
+                    
+                    <div class="card-body text-primary">
+                   
+                      <table  class="table "sheight="10px" width="50px">
+                      <thead style="max-width: 40rem;">
+                        <tr >
+                            <th style="max-width: 40rem;"> <img src="http://pngimagesfree.com/LOGO/M/Makemytrip/Make-My-Trip-Logo-PNG.png"  height="50" width="100" >
+                            </th>
+                            <th>DEPARTURE</th>
+                            <th>ARRIVAL</th>
+                            <th>DURATION</th>
+                            <th>PRICE</th>
+                        </tr>
+                    </thead>
+                    <tbody  class="table table-borderless table-striped  " height="10px" width="50px">
+                        
+                        <tr *ngFor="let flight of flights1">
+                            <td><img src="https://seeklogo.com/images/I/indigo-airlines-logo-EA9977FF45-seeklogo.com.png"  height="50" width="80" ></td>
+                            <td>{{flight.departure}}</td>
+                            <td>{{flight.arrival}}</td>
+                            <td>{{flight.duration}}</td>
+                          
+                           
+                            <td>{{flight.price |currency:'INR'}}</td> <hr>
+                            <td> <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
+                            <div >
+                              
+                              </div>
+                           
+                        </tr>
+                    </tbody>
+                
+                </table>
+                      <p class="card-text"></p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary">Bookflight</button>
+                    </div>
+                  </div>
+                </div>
+                </div>
+        </div>
+              
+      
+
+            <!-- card -2 -->
+
+            
+                <div class="col-sm-6">
+                    <div class="container-fluid" ><br>
+                    
+                        <div class="card shadow mb-5 bg-white rounded" style="max-width: 40rem;">
+                            <div class="card-header bg-white">
+                                
+                            
+                            <div class="card-body text-primary">
+                           
+                              <table  class="table "sheight="10px" width="50px">
+                              <thead style="max-width: 40rem;">
+                                <tr >
+                                    <th style="max-width: 40rem;"> <img src="http://pngimagesfree.com/LOGO/M/Makemytrip/Make-My-Trip-Logo-PNG.png"  height="50" width="100" >
+                                    </th>
+                                    <th>DEPARTURE</th>
+                                    <th>ARRIVAL</th>
+                                    <th>DURATION</th>
+                                    <th>PRICE</th>
+                                </tr>
+                            </thead>
+                            <tbody  class="table table-borderless table-striped  " height="10px" width="50px">
+                                
+                                <tr *ngFor="let flight of flights1">
+                                    <td><img src="https://seeklogo.com/images/I/indigo-airlines-logo-EA9977FF45-seeklogo.com.png"  height="50" width="80" ></td>
+                                    <td>{{flight.departure}}</td>
+                                    <td>{{flight.arrival}}</td>
+                                    <td>{{flight.duration}}</td>
+                                  
+                                   
+                                    <td>{{flight.price |currency:'INR'}}</td> <hr>
+                                    <td> <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
+                                    <div >
+                                      
+                                      </div>
+                                   
+                                </tr>
+                            </tbody>
+                        
+                        </table>
+                              <p class="card-text"></p>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-primary">Bookflight</button>
+                            </div>
+                          </div>
+                        </div>
+                        </div>
+                </div>
+                      
+            </div>
+                
+        
+            
+
+</body>
+<!-- <body>
+
+    <div class="row">
+<div class="col-sm-6">
     <div class="container-fluid" ><br>
     
         <div class="card shadow mb-5 bg-white rounded" style="max-width: 40rem;">
@@ -21,11 +205,11 @@
                 
             
             <div class="card-body text-primary">
-              <!-- <h5 class="card-title"></h5> -->
+           
               <table  class="table "sheight="10px" width="50px">
-              <thead >
+              <thead style="max-width: 40rem;">
                 <tr >
-                    <th> <img src="http://pngimagesfree.com/LOGO/M/Makemytrip/Make-My-Trip-Logo-PNG.png"  height="50" width="100" >
+                    <th style="max-width: 40rem;"> <img src="http://pngimagesfree.com/LOGO/M/Makemytrip/Make-My-Trip-Logo-PNG.png"  height="50" width="100" >
                     </th>
                     <th>DEPARTURE</th>
                     <th>ARRIVAL</th>
@@ -40,18 +224,12 @@
                     <td>{{flight.departure}}</td>
                     <td>{{flight.arrival}}</td>
                     <td>{{flight.duration}}</td>
-                  <!---  <div >
-                        <input type="radio" name="" value="price">
-                       <!---- <button type="radio"name="price" value="price"></button>
-                       <label class="btn btn-outline-primary" for="btncheck1">Checkbox 1</label>
-                      </div>-->
+                  
                    
                     <td>{{flight.price |currency:'INR'}}</td> <hr>
                     <td> <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
                     <div >
-                        <!-- <input   style="border-color: red"  type="radio" name="" value="price"> -->
-                       <!---- <button type="radio"name="price" value="price"></button>
-                       <label class="btn btn-outline-primary" for="btncheck1">Checkbox 1</label>-->
+                      
                       </div>
                    
                 </tr>
@@ -66,58 +244,21 @@
           </div>
         </div>
         </div>
-        <div class="container-fluid" ><br>
-            <div class="card shadow mb-5 bg-white rounded" style="max-width: 40rem;">
-                <div class="card-header bg-white">
-                    <!-- <img src="https://www.logo.wine/a/logo/Paytm/Paytm-Logo.wine.svg"  height="40" width="100"> -->
-                
-                <div class="card-body text-primary">
-                  <!-- <h5 class="card-title"></h5> -->
-                  <table class="table table-borderless table-striped " height="10px" width="10px">
-                  <thead>
-                    <tr>
-                        <th><img src="https://www.logo.wine/a/logo/Paytm/Paytm-Logo.wine.svg"  height="40" width="100">
-                        </th>
-                        <th>DEPARTURE</th>
-                        <th>ARRIVAL</th>
-                        <th>DURATION</th>
-                        <th>PRICE</th>
+</div>
+      
+    </div>
 
-                    </tr>
-                </thead>
-                <tbody >
-                    <tr *ngFor="let flight of flights">
-                        <td><img src="https://seeklogo.com/images/I/indigo-airlines-logo-EA9977FF45-seeklogo.com.png"  height="50" width="80" ></td>
-                        <td>{{flight.departure}}</td>
-                        <td>{{flight.arrival}}</td>
-                        <td>{{flight.duration}}</td>
-                        <td>{{flight.price |currency:'INR'}}</td> <hr>
-                        <td> <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-                       
-                        <div >
-                            <!-- <input   style="border-color: red"  type="radio" name="" value="price"> -->
-                        
-                            <!-- <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"> -->
+    
+        
+</body> -->
 
+<!-- <div class="row">
+    <div class="col-sm-6">
+        <input type="text" ngModel name = "address"   class="form-control" required #address="ngModel" placeholder="Address"><br/>
 
+    </div>
+    <div class="col-sm-6">
+        <input type="text" ngModel name = "pincode"   class="form-control" required #pincode="ngModel" placeholder="Pincode"><br/>
 
-                            
-                           <!-- <button type="radio"name="price" value="price"></button>
-                           <label class="btn btn-outline-primary" for="btncheck1">Checkbox 1</label> -->
-                          </div>
-                          
-                       
-                    </tr>
-                </tbody>
-            
-            </table>
-                  <p class="card-text"></p>
-                </div>
-                <div class="card-footer">
-                    <button class="btn btn-primary">Bookflight</button>
-                </div>
-            
-              </div>
-            </div>
-            </div>
-</body>
+     </div>
+</div> -->

@@ -1,5 +1,6 @@
 import { HtmlParser } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { EmailValidator } from '@angular/forms';
 import { Router } from '@angular/router';
 import { setupTestingRouter } from '@angular/router/testing';
 import { GoogleLoginProvider, SocialAuthService, SocialUser } from 'angularx-social-login';
@@ -11,19 +12,6 @@ import { FlightService } from '../flight.service';
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent implements OnInit {
-
-
-// user!:SocialUser;
-// constructor(private authService:SocialAuthService){}
-
-//   ngOnInit(): void {
-
-//     this.authService.authState.subscribe((user))=>{
-//       this.user =this.user;
-//     }
- 
-//   }
-
 
 
  
@@ -42,6 +30,8 @@ export class LoginPageComponent implements OnInit {
     
    }
   ngOnInit(): void {
+
+
     this.authService.authState.subscribe((gUser)=>
     {
       this.gUser = gUser;
@@ -51,8 +41,11 @@ export class LoginPageComponent implements OnInit {
     
   
   }
+  getallPassengers() {
+    throw new Error('Method not implemented.');
+  }
   signWithGoogle():any{
-    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).then(x => console.log(x));
   }
   signOut():any
   {
@@ -79,20 +72,14 @@ export class LoginPageComponent implements OnInit {
   }
   loginFormSubmit(loginForm:any)
     {
-      if(loginForm.loginId ==='pulipati@gmail.com' &&loginForm.password ==='password')
+      if(loginForm.loginId === 'pulipati@gmail.com' &&loginForm.password === 'password')
       {
         this.service.setUserLoggedIn();
         this.router.navigate(['homepage']);
+        
       }
     }
 
 
-}
-function signWithGoogle() {
-  throw new Error('Function not implemented.');
-}
-
-function signOut() {
-  throw new Error('Function not implemented.');
-}
+  }
 

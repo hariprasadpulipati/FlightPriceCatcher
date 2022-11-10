@@ -9,11 +9,10 @@ import { RegisterPageComponent } from './register-page/register-page.component';
 const routes: Routes = [
   {path:'',component:HomePageComponent},
   {path:'homepage',component:HomePageComponent},
-  {path:'findFlights',component:FindFlightsComponent},
   {path:'login',component:LoginPageComponent},
   {path:'register',component:RegisterPageComponent},
-  {path:'homepage',component:HomePageComponent},
   {path:'bookingdetails',component:BookingdetailsComponent},
+  {path:'findFlights',component:FindFlightsComponent},
   
   
 ];

@@ -15,40 +15,101 @@
     <br>
     <br>
 
-  <div class="card shadow mb-5 bg-transparent-opacity-25 rounded">
+  <div class="card shadow mb-5 bg-transparent-opacity-25 rounded" style="width:50%;padding-left: 20px;">
 
         <br>
   
       
     <form #RegistrationForm = "ngForm" (ngSubmit)="RegistrationFormSubmit(RegistrationForm.value)" novalidate>
 
-        <input type="text" ngModel name = "firstname"  class="form-control" required #firstname="ngModel" placeholder="FirstName"><br/>
-        <input type="text" ngModel name = "lastname"  class="form-control" required #lastname="ngModel" placeholder="LastName"><br/>
-         <input type="text" ngModel name = "gender"  class="form-control" required #gender="ngModel"  placeholder="Gender"><br/>
-         <input type="text" ngModel name = "Dob"  class="form-control" onfocus="(this.type='date')" required #dob="ngModel" placeholder="Dob"><br/>
-         <input type="text" ngModel name = "emailid"  class="form-control" required #emailid="ngModel" placeholder="Email Id"><br/>
+        <div class="form row">
+                <div class="col-sm-6">
+                    <input type="text" ngModel name = "firstname"  class="form-control" required #firstname="ngModel" placeholder="FirstName"><br/>
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" ngModel name = "lastname"   class="form-control" required #lastname="ngModel" placeholder="LastName"><br/>
+
+                </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6" >
+              Gender :<label class="radiobtn" required #gender="ngModel"ngModel name = "male" id="flexRadioDefault1" ><input type="radio" name="gender" value="male" >Male</label>
+              <label class="radiobtn" required #gender="ngModel"ngModel name = "female" ><input type="radio" name="gender" value="female" >FeMale</label>
+              <label class="radiobtn" required #gender="ngModel"ngModel name = "other" ><input type="radio" name="gender" value="other" >Others</label>
+                <!-- <input type="radio" ngModel name = "gender"    class="form-control" required #gender="ngModel"  placeholder="Gender"><br/> -->
+
+            </div>
+            <div class="col-sm-6">
+                <input type="text" ngModel name = "Dob"       class="form-control" onfocus="(this.type='date')" required #dob="ngModel" placeholder="Dob"><br/>
+             </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <input type="text" ngModel name = "emailid"   class="form-control" required #emailid="ngModel" placeholder="Email Id"><br/>
+
+        </div>
+        <div class="col-sm-6">
+            <!-- <input type="text" ngModel name = "contactnumber"  class="form-control" required #contactnumber="ngModel" placeholder="ContactNumber"><br/> -->
+            <input type="text" name="num" data-validation="number" data-validation-allowing="negative,number" input name="color" data-validation="number" datavalidation-ignore="$" required="required" class="form-control" id="phone_no" placeholder="Phone Number">
+         </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-6">
+        <input type="text" ngModel name = "address"   class="form-control" required #address="ngModel" placeholder="Address"><br/>
+
+    </div>
+    <div class="col-sm-6">
+        <input type="text" ngModel name = "pincode"   class="form-control" required #pincode="ngModel" placeholder="Pincode"><br/>
+
+     </div>
+</div>
+
+<div class="form row">
+    <div class="form-group col-md-6">
+        <input type="text" ngModel name = "password"  class="form-control" required #password="ngModel" placeholder="Password"><br/>
+
+    </div>
+    <div class="form-group col-md-6">
+        <input type="text" ngModel name = "password"  class="form-control" required #password="ngModel" placeholder="Confirm Password"><br/>
+
+     </div>
+</div>
+
+
+
+
+         <!-- <input type="text" ngModel name = "firstname"  class="form-control" required #firstname="ngModel" placeholder="FirstName"><br/>
+         <input type="text" ngModel name = "lastname"   class="form-control" required #lastname="ngModel" placeholder="LastName"><br/>
+         <input type="text" ngModel name = "gender"    class="form-control" required #gender="ngModel"  placeholder="Gender"><br/>
+         <input type="text" ngModel name = "Dob"       class="form-control" onfocus="(this.type='date')" required #dob="ngModel" placeholder="Dob"><br/>
+         <input type="text" ngModel name = "emailid"   class="form-control" required #emailid="ngModel" placeholder="Email Id"><br/>
          <input type="text" ngModel name = "contactnumber"  class="form-control" required #contactnumber="ngModel" placeholder="ContactNumber"><br/>
-         <input type="text" ngModel name = "address"  class="form-control" required #address="ngModel" placeholder="Address"><br/>
-         <input type="text" ngModel name = "pincode"  class="form-control" required #pincode="ngModel" placeholder="Pincode"><br/>
+         <input type="text" ngModel name = "address"   class="form-control" required #address="ngModel" placeholder="Address"><br/>
+         <input type="text" ngModel name = "pincode"   class="form-control" required #pincode="ngModel" placeholder="Pincode"><br/>
+         <input type="text" ngModel name = "password"  class="form-control" required #password="ngModel" placeholder="Password"><br/> -->
          country:<select aria-placeholder="Country" name="country" ngModel >
         
             <option value={{country.cca3}}
     
             *ngFor="let country of countries">{{country.name.common}}</option>
-        </select><br/>
+        </select><br/><br>
+        <button class="btn btn-success"  (click)="RegisterSubmit" style="width: 20%;" type="submit" >Register</button>
         <br>
       
          </form>
-         <button class="btn btn-success" style="width: 40%;" type="submit" >Register</button>
+         
          
         
         
 
-<div style="color: red;" *ngIf="firstname.errors?.['required'] && firstname.touched">FirstName is mandatory..</div>
-<div style="color: red;" *ngIf="lastname.errors?.['required'] && lastname.touched">LastName is mandatory..</div>
+<!-- <div style="color: red;" *ngIf="firstname.errors?.['required'] && firstname.touched">FirstName is mandatory..</div>
+<div style="color: red;" *ngIf="lastname.errors?.['required'] && lastname.touched">LastName is mandatory..</div> -->
 <!-- <div style="color: red;" *ngIf="gender.errors?.['required'] && gender.touched">Gender is mandatory..</div> -->
-<div style="color: red;" *ngIf="emailid.errors?.['required'] && emailid.touched">EmailId is mandatory..</div>
-<div style="color: red;" *ngIf="contactnumber.errors?.['required'] && contactnumber.touched">ContactNumber is mandatory..</div> 
+<!-- <div style="color: red;" *ngIf="emailid.errors?.['required'] && emailid.touched">EmailId is mandatory..</div>
+<div style="color: red;" *ngIf="contactnumber.errors?.['required'] && contactnumber.touched">ContactNumber is mandatory..</div>  -->
 
 </div>
 

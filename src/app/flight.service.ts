@@ -5,35 +5,41 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class FlightService {
-
-  BookingDetails()
-  {
-    return this.httpClient.get('getAllBookingDetails')
-  }
-
-
+  flights:any;
+  userFindFlights:boolean 
   isUserLogged:boolean;
-  constructor(private httpClient:HttpClient)
-   {
+
+  constructor(private httpClient:HttpClient){
     this.isUserLogged=false;
+    this.userFindFlights=false;
+    this.flights=[];
+    }
+
+    registerUser(user: any): any {
+      this.httpClient.post('', user);
+    }
+
+    getAllBookingDetails() {
+      return this.httpClient.get('getAllBookingDetails')
     }
    
-      getAllCountries()
-      {
+      getAllCountries() {
         return this.httpClient.get('https://restcountries.com/v3.1/all')
       }
 
-
-    setUserLoggedIn()
-    {
+      setUserFindFlights() {
+        this.userFindFlights=true;
+      }
+     
+    setUserLoggedIn() {
           this.isUserLogged=true;
     }
     setUserLoggedOut()
     {
       this.isUserLogged=false;
     }
-    getUserLogged():boolean
-    {
+
+    getUserLogged():boolean  {
       return this.isUserLogged;
     }
   }

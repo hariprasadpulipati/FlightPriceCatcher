@@ -32,12 +32,12 @@
 
 	<form #FindFlightForm = "ngForm" (ngSubmit)="FindFlightFormSubmit(FindFlightForm.value)" novalidate>
 
-		<p class="searchText"><strong>Search For Cheap Flights</strong></p>
+		<!-- <p class="searchText"><strong>Search For Cheap Flights</strong></p> -->
 
 		<!--First Row-->
 		<div class="row mb-3 mt-3">
 
-			<label class="radiobtn"><input type="radio" name="gender" value="male" >One Way</label>
+			<!-- <label class="radiobtn"><input type="radio" name="gender" value="male" >One Way</label> -->
 			
 
 		</div>
@@ -90,12 +90,20 @@
 		<div class="row">
 
 			<div class="col-sm-6">
-				<!-- <input placeholder="&#xf073; Departing;" type="text" onfocus="(this.type='date')" id="date-picker-example" class="form-control datepicker mb-4" style="font-family:Arial, FontAwesome" > -->
-				<input type="text" placeholder="&#xf073; Departing:" onfocus="(this.type='date')"id="date-picker-example" class="form-control datepicker mb-4" style="font-family:Arial, FontAwesome">
+				<input placeholder="&#xf073; Departing;" type="text" onfocus="(this.type='date')" id="date-picker-example" class="form-control datepicker mb-4" style="font-family:Arial, FontAwesome" >
+				<!-- <input type="text" placeholder="&#xf073; Departing:" onfocus="(this.type='date')"id="date" class="form-control datepicker mb-4" style="font-family:Arial, FontAwesome"> -->
+				<!-- <mat-form-field>
+					<input matInput [matDatepicker]="picker" [min]="minDate" placeholder="Choose a date">
+					<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+					<mat-datepicker #picker ></mat-datepicker>
+				  </mat-form-field> -->
+				  <!-- <input  class="form-control" type="datetime" date-time auto-close="true" view="date" 
+  					min-view="date" maxlength="10" format="dd/MM/yyyy" ng-model="$ctrl.DateInput" 
+  					placeholder="renewal date" required="true"> -->
 			</div>
 
 				<div class="col-sm-6">
-					<input type="text" placeholder="&#xf073; Arriving:" onfocus="(this.type='date')"id="date-picker-example" class="form-control datepicker mb-4" style="font-family:Arial, FontAwesome">
+					<input type="text" placeholder="&#xf073; Arriving:" onfocus="(this.type='date')"id="date" class="form-control datepicker mb-4" style="font-family:Arial, FontAwesome">
 					<!-- <input placeholder="&#xf073; Arriving" type="text" id="date-picker-example" class="form-control datepicker" style="font-family:Arial, FontAwesome" > -->
 			</div>
 
@@ -105,8 +113,8 @@
 				<!--Fourth Row-->
 				<div class="row mt-4">
 
-					<div class="col-sm-6">
-						<input type="text" placeholder="🕐Anytime" onfocus="(this.type='time')"id="date-picker-example" class="form-control datepicker mb-4" style="font-family:Arial, FontAwesome">
+					<!-- <div class="col-sm-6"> -->
+						<!-- <input type="text" placeholder="🕐Anytime" onfocus="(this.type='time')"id="date-picker-example" class="form-control datepicker mb-4" style="font-family:Arial, FontAwesome"> -->
 						<!-- <select class="browser-default custom-select mb-4" id="select">
 						<option value="time" disabled="" selected="">Anytime</option>
 						<option value="1">6:00 AM</option>
@@ -115,17 +123,17 @@
     <!-- </select> -->
 					</div>
 
-					<div class="col-sm-6">
-						<input type="text" placeholder="🕐Anytime" onfocus="(this.type='time')"id="time-picker-example" class="form-control timepicker mb-4" style="font-family:Arial, FontAwesome">
+					<!-- <div class="col-sm-6"> -->
+						<!-- <input type="text" placeholder="🕐Anytime" onfocus="(this.type='time')"id="time-picker-example" class="form-control timepicker mb-4" style="font-family:Arial, FontAwesome"> -->
 						<!-- <select class="browser-default custom-select mb-4" id="select">
         <option value="" disabled="" selected="">Anytime</option>
           <option value="1">6:00 AM</option>
         <option value="2">3:00 PM</option>
         <option value="3">6:00 PM</option> -->
     <!-- </select> -->
-					</div>
+					<!-- </div> -->
 
-				</div>
+				<!-- </div> -->
 
 
 
@@ -158,6 +166,9 @@
         <option value="2">2</option>
         <option value="3">3</option>
     </select>
+
+	<button class="btn btn-primary float-right mt-5" style="background-color: #1e81b0;"  routerLink="findFlights" >Find Flights</button>
+
 					</div>
 
 
@@ -166,7 +177,8 @@
 
 				<!-- <button class="btn btn-outline-success" style="color: white;" type="submit" routerLink="bookingpage" >Register</button> -->
 
-				<a href="#" class="btn btn-primary float-right mt-5" style="background-color: #1e81b0;"  routerLink="findFlights">Find Flights</a>
+				<!-- <a href="#" class="btn btn-primary float-right mt-5" style="background-color: #1e81b0;"  routerLink="findFlights">Find Flights</a> -->
+				<!-- <button class="btn btn-primary float-right mt-5" style="background-color: #1e81b0;"  routerLink="findFlights" >Find Flights</button> -->
 			</form>
 			</div>
 		</div>
