@@ -4,7 +4,9 @@ import { BookingdetailsComponent } from './bookingdetails/bookingdetails.compone
 import { FindFlightsComponent } from './find-flights/find-flights.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { PaymentComponent } from './payment/payment.component';
 import { RegisterPageComponent } from './register-page/register-page.component';
+import { TicketComponent } from './ticket/ticket.component';
 
 const routes: Routes = [
   {path:'',component:HomePageComponent},
@@ -13,6 +15,9 @@ const routes: Routes = [
   {path:'register',component:RegisterPageComponent},
   {path:'bookingdetails',component:BookingdetailsComponent},
   {path:'findFlights',component:FindFlightsComponent},
+  {path:'payment',component:PaymentComponent},
+  {path:'ticket',component:TicketComponent},
+
   
   
 ];

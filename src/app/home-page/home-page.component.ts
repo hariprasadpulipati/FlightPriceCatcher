@@ -25,9 +25,11 @@ export class HomePageComponent implements OnInit {
   
   }
   FindFlightFormSubmit(FindFlightForm:any){
+    
     console.log(FindFlightForm);
     this.service.setUserFindFlights();
     this.router.navigate(['bookingdetails']);
+    
   }
 
 }

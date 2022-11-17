@@ -16,6 +16,9 @@ import { RouterModule } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FindFlightsComponent } from './find-flights/find-flights.component';
 import { BookingdetailsComponent } from './bookingdetails/bookingdetails.component';
+import { PaymentComponent } from './payment/payment.component';
+import { TicketComponent } from './ticket/ticket.component';
+
 
 
 
@@ -28,6 +31,9 @@ import { BookingdetailsComponent } from './bookingdetails/bookingdetails.compone
     NavbarComponent,
     FindFlightsComponent,
     BookingdetailsComponent,
+    PaymentComponent,
+    TicketComponent,
+   
   ],
   imports: [
     

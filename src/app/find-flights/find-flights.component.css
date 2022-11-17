@@ -1,0 +1,244 @@
+
+
+.form-rounded {
+border-radius: 1rem;
+}
+.btn-primary {
+    font-family: Raleway-SemiBold;
+   
+   width: 100px; 
+    border: 2px solid rgba(58, 133, 191, 0.75);
+    border-radius: 40px;
+    background: rgba(58, 133, 191, 0.75)
+  }
+ 
+  
+  /* Clearfix (clear floats) */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  /* ticket */
+  /* body {
+    background: #dd3f3e;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .ticket {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 200px;
+    margin: 20px auto;
+  }
+  .ticket .stub,
+  .ticket .check {
+    box-sizing: border-box;
+  }
+  .stub {
+    background: #ef5658;
+    height: 250px;
+    width: 1000px;
+    color: white;
+    padding: 20px;
+    position: relative;
+  }
+  .stub:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-top: 20px solid #dd3f3e;
+    border-left: 20px solid #ef5658;
+    width: 0;
+  }
+  .stub:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-bottom: 20px solid #dd3f3e;
+    border-left: 20px solid #ef5658;
+    width: 0;
+  }
+  .stub .top {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 40px;
+    text-transform: uppercase;
+  }
+  .stub .top .line {
+    display: block;
+    background: #fff;
+    height: 40px;
+    width: 3px;
+    margin: 0 20px;
+  }
+  .stub .top .num {
+    font-size: 10px;
+  }
+  .stub .top .num span {
+    color: #000;
+  }
+  .stub .number {
+    position: absolute;
+    left: 40px;
+    font-size: 150px;
+  }
+  .stub .invite {
+    position: absolute;
+    left: 150px;
+    bottom: 45px;
+    color: #000;
+    width: 20%;
+  }
+  .stub .invite:before {
+    content: '';
+    background: #fff;
+    display: block;
+    width: 40px;
+    height: 3px;
+    margin-bottom: 5px;
+  }
+  .check {
+    background: #fff;
+    height: 250px;
+    width: 450px;
+    padding: 40px;
+    position: relative;
+  }
+  .check:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top: 20px solid #dd3f3e;
+    border-right: 20px solid #fff;
+    width: 0;
+  }
+  .check:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-bottom: 20px solid #dd3f3e;
+    border-right: 20px solid #fff;
+    width: 0;
+  }
+  .check .big {
+    font-size: 80px;
+    font-weight: 900;
+    line-height: .8em;
+  }
+  .check .number {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    color: #ef5658;
+    font-size: 40px;
+  }
+  .check .info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    font-size: 12px;
+    margin-top: 20px;
+    width: 100%;
+  }
+  .check .info section {
+    margin-right: 50px;
+  }
+  .check .info section:before {
+    content: '';
+    background: #ef5658;
+    display: block;
+    width: 40px;
+    height: 3px;
+    margin-bottom: 5px;
+  }
+  .check .info section .title {
+    font-size: 10px;
+    text-transform: uppercase;
+  } */
+
+  /* sidebar */
+  
+  /* transparent card */
+
+  @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Sacramento&display=swap");
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  width: calc(2px * 2);
+  border: 2px solid rgba(26, 26, 26, 0);
+}
+
+::-webkit-scrollbar-track-piece {
+  background: transparent;
+  width: calc(2px / 2);
+  border: 2px solid rgba(26, 26, 26, 0);
+}
+
+body {
+  scrollbar-face-color: rgba(255, 255, 255, 0.15);
+  scrollbar-track-color: transparent;
+}
+
+div {
+  box-sizing: border-box;
+  
+}
+
+
+body {
+
+  display: grid;
+  height: 100vh;
+  font-family: "Sacramento", cursive;
+  color: #fff;
+  background: #333;
+  background-image: radial-gradient(ellipse at bottom left, #00a3cb 40%, rgba(0, 163, 203, 0) 40%), radial-gradient(ellipse at top right, #00a3cb 30%, rgba(0, 163, 203, 0) 30%), linear-gradient(to right, #625793 0%, #625793 33%, #d55d64 33%, #d55d64 66%, #e49129 66%);
+  background-size: 50% 100%;
+}
+
+body .card {
+  margin: 0;
+  padding: 1em;
+  border-radius: 1em;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  text-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  transform: perspective(500px);
+  transform-style: preserve-3d;
+}

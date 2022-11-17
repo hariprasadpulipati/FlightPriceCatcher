@@ -8,11 +8,13 @@ export class FlightService {
   flights:any;
   userFindFlights:boolean 
   isUserLogged:boolean;
+  userpayment: boolean;
 
   constructor(private httpClient:HttpClient){
     this.isUserLogged=false;
     this.userFindFlights=false;
     this.flights=[];
+    this.userpayment=false;
     }
 
     registerUser(user: any): any {
@@ -30,6 +32,10 @@ export class FlightService {
       setUserFindFlights() {
         this.userFindFlights=true;
       }
+      setUserpayment() {
+        this.userpayment=true;
+      }
+     
      
     setUserLoggedIn() {
           this.isUserLogged=true;

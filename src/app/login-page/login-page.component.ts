@@ -54,7 +54,7 @@ export class LoginPageComponent implements OnInit {
  
   loginSubmit():any
   {
-    if(this.loginId == 'Admin' && this.password == 'Admin')
+    if(this.loginId == 'hariprasad@gmail.com' && this.password == '9963773002')
     {
       alert('wellcome')
     }else

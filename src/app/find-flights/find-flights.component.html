@@ -9,22 +9,427 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script async type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_AZX2aZgRLNog-N1R5333Ns5CjmIqx1A&libraries=places&callback=initMap">
+</script>
     <title>Document</title>
 	
 </head>
 
 
-<body  class="container-fluid" style="background-image: url(https://images.pexels.com/photos/1465904/pexels-photo-1465904.jpeg?cs=srgb&dl=pexels-nur-andi-ravsanjani-gusma-1465904.jpg&fm=jpg&_gl=1*o7f84h*_ga*MTkwOTk1Nzc5Ni4xNjY3Mzc0Nzcz*_ga_8JE65Q40S6*MTY2NzQ2NjEwOC4zLjAuMTY2NzQ2NjEwOC4wLjAuMA..);background-size: cover;">
-    <br>
-    <br>
+<body  class="container-fluid" style="background-image: url(https://images.pexels.com/photos/7130500/pexels-photo-7130500.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);background-size: cover;">
+   <div class="form row" style="position: center; margin-top: 25px;">
+    <div class="col-sm-2">
+        <input type="text" id ="location" ngModel name = "firstname"  class="form-control form-rounded" required #firstname="ngModel" placeholder="Arriavl"><br/>
+                <!-- <input type="text" id="location"> -->
+                <script type="text/javascript">
+                  $(document).ready(function(){
+                    var Autocomplete;
+                    var id='location';
 
-    <div class="row">
+                    Autocomplete = new google.maps.places.Autocomplete((document.getElementById(id)),{
+                      types:[Geolocation],
+                    })
+                      
+                    
+                    
+                  })
+
+                </script>
+      </div>
+    
+    <div class="col-sm-2">
+        <input type="text" ngModel name = "lastname"   class="form-control form-rounded" required #lastname="ngModel" placeholder="Departure"><br/>
+
+    </div>
+
+  <div class="col-sm-2">
+    <input type="text" ngModel name = "Dob"       class="form-control form-rounded" onfocus="(this.type='date')" required #dob="ngModel" placeholder="Select date"><br/>
+  </div>
+  
+    <div class="col-sm-2">
+    <select class="form-control form-rounded" id="select">
+      <option value="" disabled="" selected="">Passangers</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+  </select>
+</div>
+<div class="col-sm-2">
+  <button type="button" class="btn btn-primary"><h6>Search</h6></button>
+</div>
+</div>
+
+<!-- transparent card -->
+<form #bookingForm = "ngForm" class="form-group"(ngSubmit)="bookingFormSubmit(bookingForm.value)" novalidate>
+<div class="row">
+  <div class="col-sm-6">
+<div class="card" data-tilt data-tilt-scale="0.95" data-tilt-startY="20" style="margin-top: 25px; margin-left: 60px; width: fit-content;">
+  <table  class="table table-borderless"sheight="10px" width="100%"class="table-wrap" style="margin-left: 10px;">
+    <thead >
+      <tr >
+          <th style="max-width: 40rem;"> <img src="https://www.logo.wine/a/logo/Paytm/Paytm-Logo.wine.svg"  height="40" width="100" >
+          </th>
+          <th>&nbsp;DEPARTURE</th>
+          <th>&nbsp;ARRIVAL</th>
+          <th>&nbsp;DURATION</th>
+          <th>&nbsp;PRICE</th>
+      </tr>
+  </thead>
+  <tbody  class="table table-borderless " height="10px" width="50px" style="background: transparent;">
+      
+      <tr *ngFor="let flight of flights">
+          <td ><img src="https://seeklogo.com/images/I/indigo-airlines-logo-EA9977FF45-seeklogo.com.png"  height="50" width="80" ></td>
+          <td>{{flight.departure}}</td>
+          <td>{{flight.arrival}}</td>
+          <td>{{flight.duration}}</td>
+        
+         
+          <td>{{flight.price |currency:'INR'}}</td> <hr>
+          <!-- <td> <input class="form-check-i" type="checkbox" value="" id="flexCheckDefault"></td> -->
+          <td><button type="button"  class="btn btn-success" routerLink="payment">Book Flight</button>
+          </td>
+          <div >
+            
+            </div>
+         <!-- flight 2 -->
+      </tr>
+      <tr *ngFor="let flight of flights1">
+        <td ><img src="https://www.dinesh.com/images/stories/logo/airline-logos/vistara_logo.jpg"  height="80" width="80" ></td>
+        <td>{{flight.departure}}</td>
+        <td>{{flight.arrival}}</td>
+        <td>{{flight.duration}}</td>
+      
+       
+        <td>{{flight.price |currency:'INR'}}</td> <hr>
+        <!-- <td> <input class="form-check-i" type="checkbox" value="" id="flexCheckDefault"></td> -->
+        <td><button type="button" class="btn btn-success" routerLink="payment">Book Flight</button>
+        </td>
+        <div >
+          
+          </div>
+       
+    </tr>
+    <!-- flight 3 -->
+    <tr *ngFor="let flight of flights2">
+      <td ><img src="https://banner2.cleanpng.com/20180330/wzw/kisspng-air-india-flight-airline-logo-air-5abdb734b8f3d2.5111228615223826447576.jpg"  height="50" width="80" ></td>
+      <td>{{flight.departure}}</td>
+      <td>{{flight.arrival}}</td>
+      <td>{{flight.duration}}</td>
+    
+     
+      <td>{{flight.price |currency:'INR'}}</td> <hr>
+      <!-- <td> <input class="form-check-i" type="checkbox" value="" id="flexCheckDefault"></td> -->
+      <td><button type="button" class="btn btn-success"routerLink="payment">Book Flight</button>
+      </td>
+      <div >
+        
+        </div>
+     
+  </tr>
+  <!-- flight 4 -->
+  <tr *ngFor="let flight of flights3">
+    <td ><img src="https://seeklogo.com/images/S/spicejet-logo-393873A1AE-seeklogo.com.png"  height="50" width="80" ></td>
+    <td>{{flight.departure}}</td>
+    <td>{{flight.arrival}}</td>
+    <td>{{flight.duration}}</td>
+  
+   
+    <td>{{flight.price |currency:'INR'}}</td> <hr>
+    <!-- <td> <input class="form-check-i" type="checkbox" value="" id="flexCheckDefault"></td> -->
+    <td><button type="button" class="btn btn-success"routerLink="payment">Book Flight</button>
+    </td>
+    <div >
+      
+      </div>
+      
+   
+</tr>
+<!-- flight 5 -->
+<tr *ngFor="let flight of flights4">
+  <td ><img src="https://1000logos.net/wp-content/uploads/2020/04/AirAsia-Logo-2012-768x483.png"  height="50" width="80" ></td>
+  <td>{{flight.departure}}</td>
+  <td>{{flight.arrival}}</td>
+  <td>{{flight.duration}}</td>
+
+ 
+  <td>{{flight.price |currency:'INR'}}</td> <hr>
+  <!-- <td> <input class="form-check-i" type="checkbox" value="" id="flexCheckDefault"></td> -->
+  <td><button type="button" class="btn btn-success"routerLink="payment">Book Flight</button>
+  </td>
+  <div >
+    
+    </div>
+ 
+</tr>
+  </tbody> 
+
+</table >
+
+</div>
+
+
+<!-- make mytrip card starts -->
+</div>
+<div class="col-sm-6">
+  <div class="card" data-tilt data-tilt-scale="0.95" data-tilt-startY="20" style="margin-top: 25px; margin-left:0px;width: fit-content; " >
+    <table  class="table table-borderless"sheight="10px" width="100%" style="display: inline-block;"class="table-wrap">
+      <thead >
+        <tr >
+            <th style="max-width: 40rem;"> <img src="http://pngimagesfree.com/LOGO/M/Makemytrip/Make-My-Trip-Logo-PNG.png"  height="40" width="100" >
+            </th>
+            <th>&nbsp;DEPARTURE</th>
+            <th>&nbsp;ARRIVAL</th>
+            <th>&nbsp;DURATION</th>
+            <th>&nbsp;PRICE</th>
+        </tr>
+    </thead>
+    <tbody  class="table table-borderless " height="10px" width="10px" style="background: transparent;">
+        
+        <tr *ngFor="let flight of flights5">
+            <td ><img src="https://seeklogo.com/images/I/indigo-airlines-logo-EA9977FF45-seeklogo.com.png"  height="50" width="80" ></td>
+            <td>{{flight.departure}}</td>
+            <td>{{flight.arrival}}</td>
+            <td>{{flight.duration}}</td>
+          
+           
+            <td>{{flight.price |currency:'INR'}}</td> <hr>
+            <!-- <td> <input class="form-check-i" type="checkbox" value="" id="flexCheckDefault"></td> -->
+            <td><button type="button" class="btn btn-success" routerLink="payment">Book Flight</button>
+            </td>
+            <div >
+              
+              </div>
+           <!-- flight 2 -->
+        </tr>
+        <tr *ngFor="let flight of flights6">
+          <td ><img src="https://www.dinesh.com/images/stories/logo/airline-logos/vistara_logo.jpg"  height="80" width="80" ></td>
+          <td>{{flight.departure}}</td>
+          <td>{{flight.arrival}}</td>
+          <td>{{flight.duration}}</td>
+        
+         
+          <td>{{flight.price |currency:'INR'}}</td> <hr>
+          <!-- <td> <input class="form-check-i" type="checkbox" value="" id="flexCheckDefault"></td> -->
+          <td><button type="button" class="btn btn-success"routerLink="payment">Book Flight</button>
+          </td>
+          <div >
+            
+            </div>
+         
+      </tr>
+      <!-- flight 3 -->
+      <tr *ngFor="let flight of flights7">
+        <td ><img src="https://banner2.cleanpng.com/20180330/wzw/kisspng-air-india-flight-airline-logo-air-5abdb734b8f3d2.5111228615223826447576.jpg"  height="50" width="80" ></td>
+        <td>{{flight.departure}}</td>
+        <td>{{flight.arrival}}</td>
+        <td>{{flight.duration}}</td>
+      
+       
+        <td>{{flight.price |currency:'INR'}}</td> <hr>
+        <!-- <td> <input class="form-check-i" type="checkbox" value="" id="flexCheckDefault"></td> -->
+        <td><button type="button" class="btn btn-success"routerLink="payment">Book Flight</button>
+        </td>
+        <div >
+          
+          </div>
+       
+    </tr>
+    <!-- flight 4 -->
+    <tr *ngFor="let flight of flights8">
+      <td ><img src="https://seeklogo.com/images/S/spicejet-logo-393873A1AE-seeklogo.com.png"  height="50" width="80" ></td>
+      <td>{{flight.departure}}</td>
+      <td>{{flight.arrival}}</td>
+      <td>{{flight.duration}}</td>
+    
+     
+      <td>{{flight.price |currency:'INR'}}</td> <hr>
+      <!-- <td> <input class="form-check-i" type="checkbox" value="" id="flexCheckDefault"></td> -->
+      <td><button type="button" class="btn btn-success"routerLink="payment">Book Flight</button>
+      </td>
+      <div >
+        
+        </div>
+     
+  </tr>
+  <!-- flight 5 -->
+  <tr *ngFor="let flight of flights9">
+    <td ><img src="https://1000logos.net/wp-content/uploads/2020/04/AirAsia-Logo-2012-768x483.png"  height="50" width="80" ></td>
+    <td>{{flight.departure}}</td>
+    <td>{{flight.arrival}}</td>
+    <td>{{flight.duration}}</td>
+  
+   
+    <td>{{flight.price |currency:'INR'}}</td> <hr>
+    <!-- <td> <input class="form-check-i" type="checkbox" value="" id="flexCheckDefault"></td> -->
+    <td><button type="button" class="btn btn-success"routerLink="payment">Book Flight</button>
+    </td>
+    <div >
+      
+      </div>
+   
+  </tr>
+    </tbody> 
+  
+  </table>
+  </div>
+  
+  
+  </div>
+
+</div>
+</form>
+
+
+  
+<!-- <div class="row">
+  <div class="col-sm-6">
+      <div class="card shadow mb-5 bg-white rounded" style="width: 50;">
+          <table class="table table-borderless table-striped  ">
+              <thead >
+                <tr>
+                  
+                
+
+                  <th>New Delhi</th> 
+                  <th >--</th> 
+                  <th>Bengaluru</th>
+                  <th>Wed</th>
+                  <th>9 Nov</th>
+                </tr>
+              </thead>
+              <tbody>
+              <tr>
+            
+              <td>Departure</td>
+              <td>--</td>
+              <td>Duration</td>
+              <td>Arrival</td>
+              <td>Price</td>
+              </tr>
+              </tbody>
+            </table>
+
+      </div>
+
+  </div>
+</div> -->
+<!-- <div class="ticket">
+  <div class="stub">
+    <div class="top">
+      <span class="admit">Admit</span>
+      <span class="line"></span>
+      <span class="num">
+        Invitation
+        <span>31415926</span>
+      </span>
+    </div>
+    <div class="images"><img src="http://pngimagesfree.com/LOGO/M/Makemytrip/Make-My-Trip-Logo-PNG.png" height="50" width="100" alt="" srcset=""></div>
+    <div class="invite">
+      Invite for you
+    </div>
+  </div>
+  <div class="check">
+    <div class="big">
+      You're <br> Invited
+    </div>
+    <div class="number">#1</div>
+    <div class="info">
+      <section>
+        <div class="title">Date</div>
+        <div>4/27/2016</div>
+      </section>
+      <section>
+        <div class="title">Issued By</div>
+        <div>Ampersand</div>
+      </section>
+      <section>
+        <div class="title">Invite Number</div>
+        <div>31415926</div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<br>
+<br>
+<br> -->
+<!-- <div class="row">
+  <div class="col-sm-6">
+      <div class="container-fluid" ><br>
+      
+          <div class="card shadow mb-5 bg-white rounded" style="max-width: 40rem;">
+              <div class="card-header bg-white">
+                  
+              
+              <div class="card-body text-primary"  width="100%" >
+             
+                <table  class="table "sheight="10px" width="100%">
+                <thead >
+                  <tr >
+                      <th style="max-width: 40rem;"> <img src="http://pngimagesfree.com/LOGO/M/Makemytrip/Make-My-Trip-Logo-PNG.png"  height="50" width="100" >
+                      </th>
+                      <th>DEPARTURE</th>
+                      <th>ARRIVAL</th>
+                      <th>DURATION</th>
+                      <th>PRICE</th>
+                  </tr>
+              </thead>
+              <tbody  class="table table-borderless table-striped  " height="10px" width="50px">
+                  
+                  <tr *ngFor="let flight of flights1">
+                      <td><img src="https://seeklogo.com/images/I/indigo-airlines-logo-EA9977FF45-seeklogo.com.png"  height="50" width="80" ></td>
+                      <td>{{flight.departure}}</td>
+                      <td>{{flight.arrival}}</td>
+                      <td>{{flight.duration}}</td>
+                    
+                     
+                      <td>{{flight.price |currency:'INR'}}</td> <hr>
+                      <td> <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
+                      <div >
+                        
+                        </div>
+                     
+                  </tr>
+              </tbody> 
+          
+          </table>
+                <p class="card-text"></p>
+              </div>
+              <div class="card-footer">
+                  <button class="btn btn-primary">Bookflight</button>
+              </div>
+            </div>
+          </div>
+          </div>
+  </div>
+        
+</div> -->
+
+  <!-- side bar -->
+  
+
+
+  
+</body>
+
+
+<!-- <body  class="container-fluid" style="background-image: url(https://images.pexels.com/photos/1465904/pexels-photo-1465904.jpeg?cs=srgb&dl=pexels-nur-andi-ravsanjani-gusma-1465904.jpg&fm=jpg&_gl=1*o7f84h*_ga*MTkwOTk1Nzc5Ni4xNjY3Mzc0Nzcz*_ga_8JE65Q40S6*MTY2NzQ2NjEwOC4zLjAuMTY2NzQ2NjEwOC4wLjAuMA..);background-size: cover;">
+    <br>
+    <br> -->
+
+    <!-- <div class="row">
         <div class="col-sm-6">
             <div class="card shadow mb-5 bg-white rounded" style="width: 50;">
                 <table class="table table-borderless table-striped  ">
                     <thead >
                       <tr>
-                        <!-- <th> <form>New Delhi &rarr; Bengaluru Wed, 9 Nov</form></th> -->
+                        
                       
 
                         <th>New Delhi</th> 
@@ -36,7 +441,7 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <!-- <td>Departure---- Duration Arrival Price</td> -->
+                  
                     <td>Departure</td>
                     <td>--</td>
                     <td>Duration</td>
@@ -54,7 +459,7 @@
                 <table class="table table-borderless table-striped  ">
                     <thead >
                       <tr>
-                        <!-- <th> <form>New Delhi &rarr; Bengaluru Wed, 9 Nov</form></th> -->
+                    
                       
 
                         <th>New Delhi</th> 
@@ -66,7 +471,7 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <!-- <td>Departure---- Duration Arrival Price</td> -->
+                       
                     <td>Departure</td>
                     <td>--</td>
                     <td>Duration</td>
@@ -82,7 +487,7 @@
         
     </div>
 
-    <!-- card  -->
+ 
     
     <div class="row">
         <div class="col-sm-6">
@@ -121,7 +526,7 @@
                               </div>
                            
                         </tr>
-                    </tbody>
+                    </tbody> 
                 
                 </table>
                       <p class="card-text"></p>
@@ -136,7 +541,7 @@
               
       
 
-            <!-- card -2 -->
+           
 
             
                 <div class="col-sm-6">
@@ -159,13 +564,14 @@
                                     <th>PRICE</th>
                                 </tr>
                             </thead>
-                            <tbody  class="table table-borderless table-striped  " height="10px" width="50px">
+                            
+                            <tbody  class="table table-borderless table-striped  "   style="width: 100%; float: right;">
                                 
                                 <tr *ngFor="let flight of flights1">
-                                    <td><img src="https://seeklogo.com/images/I/indigo-airlines-logo-EA9977FF45-seeklogo.com.png"  height="50" width="80" ></td>
-                                    <td>{{flight.departure}}</td>
-                                    <td>{{flight.arrival}}</td>
-                                    <td>{{flight.duration}}</td>
+                                    <td class="block"><img src="https://seeklogo.com/images/I/indigo-airlines-logo-EA9977FF45-seeklogo.com.png"  height="50" width="80" ></td>
+                                    <td class="block">{{flight.departure}}</td>
+                                    <td class="block">{{flight.arrival}}</td>
+                                    <td >{{flight.duration}}</td>
                                   
                                    
                                     <td>{{flight.price |currency:'INR'}}</td> <hr>
@@ -188,12 +594,12 @@
                         </div>
                 </div>
                       
-            </div>
+                     </div> -->
                 
         
             
 
-</body>
+<!-- </body> -->
 <!-- <body>
 
     <div class="row">
